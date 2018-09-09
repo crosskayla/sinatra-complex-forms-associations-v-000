@@ -29,7 +29,8 @@ class OwnersController < ApplicationController
   end
 
   post '/owners/:id' do
-
+    @owner = Owner.find(params[:id])
+    
     if !params[:owner].keys.include?("pet_ids")
     params[:owner]["pet_ids"] = []
     end
